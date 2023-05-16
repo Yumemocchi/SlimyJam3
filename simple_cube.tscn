@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://soun6f1k3im1"]
+
+[ext_resource type="PackedScene" uid="uid://dl4b626r6qkwi" path="res://simple_cube.gltf" id="1_1w5s8"]
+
+[node name="simple_cube" instance=ExtResource("1_1w5s8")]
