@@ -55,7 +55,7 @@ environment = SubResource("Environment_oxdek")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.600763, -0.421181, -0.679479, 0.748655, -0.00166622, 0.662958, -0.280357, -0.906975, 0.314318, 0, 9.90596, 4.90385)
-light_color = Color(0.980392, 0.952941, 0, 1)
+light_color = Color(0.0235294, 0.0235294, 0.0235294, 1)
 shadow_enabled = true
 
 [node name="wizard_10" parent="." instance=ExtResource("2_5dieq")]

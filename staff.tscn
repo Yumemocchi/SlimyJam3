@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpi7pwapfcqr6"]
+[gd_scene load_steps=5 format=3 uid="uid://bpi7pwapfcqr6"]
 
 [ext_resource type="PackedScene" uid="uid://dj40l6o2fe0t2" path="res://staff.gltf" id="1_irueg"]
+[ext_resource type="PackedScene" uid="uid://chrwdererd1vo" path="res://fire.tscn" id="2_fttnc"]
 
 [sub_resource type="Animation" id="Animation_24pcm"]
 resource_name = "attack_animation"
@@ -21,6 +22,9 @@ _data = {
 
 [node name="Staff" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.27556, 0.222938, 0.00886001)
+
+[node name="fire" parent="Staff" index="0" instance=ExtResource("2_fttnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0312722, 3.02366, 0.0851878)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
 root_node = NodePath("../Staff")

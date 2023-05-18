@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://chrwdererd1vo"]
+
+[ext_resource type="Texture2D" uid="uid://d1ut1g5bbr8m0" path="res://fire.png" id="1_acsbv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wwmb0"]
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 0.439216, 0.101961, 1)
+albedo_texture = ExtResource("1_acsbv")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xokjf"]
+lifetime_randomness = 0.17
+gravity = Vector3(0, 3, 0)
+angular_velocity_max = 243.48
+scale_max = 2.0
+hue_variation_min = 0.26
+hue_variation_max = 0.56
+turbulence_enabled = true
+turbulence_noise_scale = 2.24
+turbulence_influence_min = 0.15
+turbulence_influence_max = 0.22
+
+[sub_resource type="QuadMesh" id="QuadMesh_yepag"]
+
+[node name="fire" type="Node3D"]
+
+[node name="GPUFireParticles" type="GPUParticles3D" parent="."]
+material_override = SubResource("StandardMaterial3D_wwmb0")
+amount = 12
+preprocess = 1.75
+speed_scale = 7.2
+explosiveness = 0.1
+randomness = 0.19
+process_material = SubResource("ParticleProcessMaterial_xokjf")
+draw_pass_1 = SubResource("QuadMesh_yepag")
