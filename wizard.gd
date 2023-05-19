@@ -10,6 +10,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 @onready var _last_direction := Vector3.FORWARD
 @onready var _direction := Vector3.ZERO
+@onready var is_attacking := false
 
 func  _ready() -> void:
 	$pivot/Camera3D.near = -100
@@ -30,10 +31,18 @@ func _physics_process(delta):
 		_wizard_mesh.rotation.y = lerp_angle(_wizard_mesh.rotation.y, target_rotation, rotation_speed * delta)
 		
 		var angle = _wizard_mesh.position.angle_to(_direction)
-		print(_direction)
 		_last_direction = Vector3(_direction.x,0.0,_direction.z)
 	
-	var is_attacking = Input.is_action_just_pressed("punch")
+	
+	
+	if Input.is_action_just_pressed("punch"):
+		_staff_AP.play("attack_animation",-1,3.0)
+	
+	is_attacking = Input.is_action_pressed("punch")
+	
+	if Input.is_action_just_released("punch"):
+		release_attack()
+
 	
 	if Input.is_action_just_pressed("dash") and !is_dashing:
 		dash()
@@ -46,7 +55,8 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	
 	if is_attacking:
-		attack()	
+		attack()
+
 
 	move_and_slide()
 			
@@ -61,5 +71,9 @@ func dash():
 	
 func attack():
 	print("attack")
-	_staff_AP.play("attack_animation")
+	
+
+func release_attack():
+	print("release attack")
+	_staff_AP.play("release_attack_animation")
 

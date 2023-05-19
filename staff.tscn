@@ -1,21 +1,34 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpi7pwapfcqr6"]
+[gd_scene load_steps=6 format=3 uid="uid://bpi7pwapfcqr6"]
 
 [ext_resource type="PackedScene" uid="uid://dj40l6o2fe0t2" path="res://staff.gltf" id="1_irueg"]
 [ext_resource type="PackedScene" uid="uid://chrwdererd1vo" path="res://fire.tscn" id="2_fttnc"]
 
 [sub_resource type="Animation" id="Animation_24pcm"]
 resource_name = "attack_animation"
+length = 0.5
 tracks/0/type = "rotation_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.5, 1, 0.602714, 0, 0, 0.797958, 1, 1, 0, 0, 0, 1)
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.5, 1, 0.62932, 0, 0, 0.777146)
+
+[sub_resource type="Animation" id="Animation_kshbi"]
+resource_name = "release_attack_animation"
+length = 0.5
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.62932, 0, 0, 0.777146, 0.5, 1, 0, 0, 0, 1)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2uj7m"]
 _data = {
-"attack_animation": SubResource("Animation_24pcm")
+"attack_animation": SubResource("Animation_24pcm"),
+"release_attack_animation": SubResource("Animation_kshbi")
 }
 
 [node name="staff" instance=ExtResource("1_irueg")]
