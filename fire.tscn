@@ -73,6 +73,7 @@ preprocess = 1.75
 speed_scale = 7.2
 explosiveness = 0.1
 randomness = 0.19
+local_coords = true
 process_material = SubResource("ParticleProcessMaterial_xokjf")
 draw_pass_1 = SubResource("QuadMesh_yepag")
 
@@ -81,3 +82,10 @@ material_override = SubResource("StandardMaterial3D_wy1n7")
 amount = 90
 process_material = SubResource("ParticleProcessMaterial_i5b63")
 draw_pass_1 = SubResource("QuadMesh_06nim")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(1, 0.545098, 0, 1)
+light_energy = 2.937
+light_indirect_energy = 3.081
+light_volumetric_fog_energy = 2.937
+omni_attenuation = 2.07053

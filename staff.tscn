@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bpi7pwapfcqr6"]
+[gd_scene load_steps=8 format=3 uid="uid://bpi7pwapfcqr6"]
 
 [ext_resource type="PackedScene" uid="uid://dj40l6o2fe0t2" path="res://staff.gltf" id="1_irueg"]
 [ext_resource type="PackedScene" uid="uid://chrwdererd1vo" path="res://fire.tscn" id="2_fttnc"]
+[ext_resource type="Script" path="res://staff.gd" id="2_j3lwm"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_x36xo"]
 
 [sub_resource type="Animation" id="Animation_24pcm"]
 resource_name = "attack_animation"
@@ -32,12 +35,20 @@ _data = {
 }
 
 [node name="staff" instance=ExtResource("1_irueg")]
+script = ExtResource("2_j3lwm")
 
 [node name="Staff" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.27556, 0.222938, 0.00886001)
 
 [node name="fire" parent="Staff" index="0" instance=ExtResource("2_fttnc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0312722, 3.02366, 0.0851878)
+
+[node name="Area3D" type="Area3D" parent="Staff" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.27556, -0.222938, -0.00886001)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Staff/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25605, 3.09934, 0)
+shape = SubResource("SphereShape3D_x36xo")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
 root_node = NodePath("../Staff")
