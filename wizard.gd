@@ -59,7 +59,7 @@ func _physics_process(delta):
 	if is_attacking:
 		attack()
 		
-	print(Globals.resting)
+	print(Globals.nb_brasero_up)
 
 	move_and_slide()
 

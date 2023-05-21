@@ -25,6 +25,7 @@ func _on_area_3d_area_entered(area):
 		fire.set_attenuation(1.5)
 		add_child(fire)
 		_is_fire_started = true
+		Globals.nb_brasero_up += 1
 		_timer.start()
 
 
@@ -34,4 +35,5 @@ func _on_timer_timeout():
 	if new_fire != null:
 		new_fire.queue_free()
 		_is_fire_started = false
+		Globals.nb_brasero_up -= 1
 		print("destroy fire") # Replace with function body.
