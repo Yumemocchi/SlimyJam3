@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://chrwdererd1vo"]
+[gd_scene load_steps=14 format=3 uid="uid://chrwdererd1vo"]
 
 [ext_resource type="Texture2D" uid="uid://0xvkisx07g8t" path="res://Kenney_Particles_transparent/flame_01.png" id="1_2b71v"]
+[ext_resource type="Script" path="res://fire.gd" id="1_xo523"]
 [ext_resource type="Texture2D" uid="uid://yuenhpdyj6ei" path="res://Kenney_Particles_transparent/smoke_07.png" id="2_s4vjf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rexqb"]
@@ -65,6 +66,7 @@ color = Color(0.976471, 0.537255, 0.270588, 1)
 [sub_resource type="QuadMesh" id="QuadMesh_06nim"]
 
 [node name="fire" type="Node3D"]
+script = ExtResource("1_xo523")
 
 [node name="GPUFireParticles" type="GPUParticles3D" parent="."]
 material_override = SubResource("StandardMaterial3D_rexqb")
@@ -88,4 +90,7 @@ light_color = Color(1, 0.545098, 0, 1)
 light_energy = 2.937
 light_indirect_energy = 3.081
 light_volumetric_fog_energy = 2.937
-omni_attenuation = 2.07053
+shadow_bias = 3.0
+shadow_opacity = 0.5
+shadow_blur = 6.0
+omni_attenuation = 0.594605

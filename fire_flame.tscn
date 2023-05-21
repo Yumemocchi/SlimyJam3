@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dv0xkorsxfqqa"]
+[gd_scene load_steps=15 format=3 uid="uid://dv0xkorsxfqqa"]
 
 [ext_resource type="Script" path="res://fire_flame.gd" id="1_rpvml"]
 [ext_resource type="Texture2D" uid="uid://0xvkisx07g8t" path="res://Kenney_Particles_transparent/flame_01.png" id="1_vywtd"]
@@ -54,11 +54,14 @@ particles_anim_v_frames = 1
 particles_anim_loop = false
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_i5b63"]
-gravity = Vector3(0, 15, 0)
+gravity = Vector3(0, 12, 0)
 scale_min = 0.5
 color = Color(0.976471, 0.537255, 0.270588, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_06nim"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u7jqd"]
+height = 6.8574
 
 [node name="fire_flame" type="Node3D"]
 script = ExtResource("1_rpvml")
@@ -88,10 +91,14 @@ light_indirect_energy = 1.072
 light_volumetric_fog_energy = 4.587
 light_specular = 0.285
 shadow_enabled = true
-shadow_bias = 0.055
-shadow_normal_bias = 5.529
-shadow_transmittance_bias = -2.389
-shadow_opacity = 0.56
-shadow_blur = 10.0
-omni_range = 7.26
+shadow_bias = 0.0
+shadow_normal_bias = 0.0
+shadow_blur = 0.0
+omni_range = 9.081
 omni_attenuation = 0.87055
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.75034, 0)
+shape = SubResource("CapsuleShape3D_u7jqd")
