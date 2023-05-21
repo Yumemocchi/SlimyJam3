@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dj40l6o2fe0t2"
-path="res://.godot/imported/staff.gltf-084f3f2ccdb27d6eaf9f1352510a6b31.scn"
+uid="uid://cdcm6hgkk46it"
+path="res://.godot/imported/brasero_05.gltf-059bb4590d5ed4f266b3a645d985b1f4.scn"
 
 [deps]
 
-source_file="res://staff.gltf"
-dest_files=["res://.godot/imported/staff.gltf-084f3f2ccdb27d6eaf9f1352510a6b31.scn"]
+source_file="res://Asset/brasero_05.gltf"
+dest_files=["res://.godot/imported/brasero_05.gltf-059bb4590d5ed4f266b3a645d985b1f4.scn"]
 
 [params]
 

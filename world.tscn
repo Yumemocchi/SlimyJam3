@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cninup1pyfhcl"]
+[gd_scene load_steps=11 format=3 uid="uid://cninup1pyfhcl"]
 
 [ext_resource type="PackedScene" uid="uid://soun6f1k3im1" path="res://simple_cube.tscn" id="1_1f1dq"]
 [ext_resource type="PackedScene" uid="uid://wcxp2b65m1yx" path="res://wizard_10.tscn" id="2_5dieq"]
 [ext_resource type="PackedScene" uid="uid://don4am62l4qjs" path="res://brasero.tscn" id="3_h5j6o"]
+[ext_resource type="PackedScene" uid="uid://bpryxd2auc8mh" path="res://Mana.tscn" id="4_0ptlq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fsk8q"]
 metallic = 1.0
@@ -80,3 +81,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9896, 0, -4.80926)
 
 [node name="simple_cube" parent="Objects" instance=ExtResource("1_1f1dq")]
 transform = Transform3D(0.63964, 0, -0.768674, 0, 1, 0, 0.768674, 0, 0.63964, 3.74972, 0, -1.06204)
+
+[node name="Control" parent="." instance=ExtResource("4_0ptlq")]

@@ -8,6 +8,7 @@ const OBJ_FIRE: Object = preload("res://fire.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_timer.stop() # Replace with function body.
+	_timer.wait_time = Globals.uptime_brasero
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

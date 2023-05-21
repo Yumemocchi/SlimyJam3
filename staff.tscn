@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bpi7pwapfcqr6"]
 
-[ext_resource type="PackedScene" uid="uid://dj40l6o2fe0t2" path="res://staff.gltf" id="1_irueg"]
+[ext_resource type="PackedScene" uid="uid://dj40l6o2fe0t2" path="res://Asset/staff.gltf" id="1_gou7m"]
 [ext_resource type="PackedScene" uid="uid://chrwdererd1vo" path="res://fire.tscn" id="2_fttnc"]
 [ext_resource type="Script" path="res://staff.gd" id="2_j3lwm"]
 
@@ -34,7 +34,7 @@ _data = {
 "release_attack_animation": SubResource("Animation_kshbi")
 }
 
-[node name="staff" groups=["staff"] instance=ExtResource("1_irueg")]
+[node name="staff" groups=["staff"] instance=ExtResource("1_gou7m")]
 script = ExtResource("2_j3lwm")
 
 [node name="Staff" parent="." index="0"]
@@ -55,3 +55,8 @@ root_node = NodePath("../Staff")
 libraries = {
 "": SubResource("AnimationLibrary_2uj7m")
 }
+
+[node name="Timer" type="Timer" parent="." index="2"]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

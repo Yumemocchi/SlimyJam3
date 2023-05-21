@@ -11,6 +11,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var SPEED = 10.0
 @onready var is_dashing = false
 
+
 func  _ready() -> void:
 	$pivot/Camera3D.near = -100
 	
@@ -57,6 +58,8 @@ func _physics_process(delta):
 
 	if is_attacking:
 		attack()
+		
+	print(Globals.resting)
 
 	move_and_slide()
 
@@ -79,4 +82,5 @@ func release_attack():
 	#print("release attack")
 	_staff_AP.play("release_attack_animation")
 	Globals.set_burst(false)
+	Globals.resting = true
 
