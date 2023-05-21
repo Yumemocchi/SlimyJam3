@@ -16,8 +16,9 @@ script = ExtResource("1_778k1")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_top = 53.0
+offset_right = 355.0
+offset_bottom = 113.0
 texture_under = ExtResource("2_x65bb")
 texture_over = ExtResource("3_gd5ns")
 texture_progress = ExtResource("4_kudfp")

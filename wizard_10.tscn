@@ -209,13 +209,14 @@ shape = SubResource("CapsuleShape3D_7lu4c")
 [node name="pivot" type="Node3D" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="pivot"]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 1.13687e-13, 10, 10)
-visible = false
+transform = Transform3D(0.707107, 0.5, -0.5, 0, 0.707107, 0.707107, 0.707107, -0.5, 0.5, 1.13687e-13, 10, 10)
 projection = 1
 current = true
-size = 20.0
+size = 40.0
 near = 0.001
-far = 100.0
+far = 50.0
 
 [node name="Camera3D2" type="Camera3D" parent="pivot"]
 transform = Transform3D(1, 0, 0, 0, 0.649899, 0.76002, 0, -0.76002, 0.649899, 0, 12.1247, 13.3199)
+visible = false
+fov = 92.9

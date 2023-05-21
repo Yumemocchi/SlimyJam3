@@ -25,7 +25,7 @@ func _physics_process(delta):
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 		
 	input_dir.normalized()
-	_direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()# * quaternion.from_euler(Vector3(0,0,0)
+	_direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized() * quaternion.from_euler(Vector3(0,45,0))
 		
 	var rotation_speed = 5.0
 	if _direction.length() > 0.1:
@@ -59,7 +59,7 @@ func _physics_process(delta):
 	if is_attacking:
 		attack()
 		
-	print(Globals.nb_brasero_up)
+	#print(Globals.nb_brasero_up)
 
 	move_and_slide()
 
@@ -69,7 +69,7 @@ func dash():
 	SPEED = 50
 	await get_tree().create_timer(0.2).timeout
 	SPEED = 10
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(0.5).timeout
 	is_dashing = false	
 
 
@@ -84,3 +84,5 @@ func release_attack():
 	Globals.set_burst(false)
 	Globals.resting = true
 
+func hurt():
+	Globals.vie -= Globals.hurt_power
