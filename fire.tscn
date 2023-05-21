@@ -65,7 +65,7 @@ color = Color(0.976471, 0.537255, 0.270588, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_06nim"]
 
-[node name="fire" type="Node3D"]
+[node name="fire" type="Node3D" groups=["camp_fire"]]
 script = ExtResource("1_xo523")
 
 [node name="GPUFireParticles" type="GPUParticles3D" parent="."]

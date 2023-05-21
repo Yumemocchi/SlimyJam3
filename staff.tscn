@@ -34,7 +34,7 @@ _data = {
 "release_attack_animation": SubResource("Animation_kshbi")
 }
 
-[node name="staff" instance=ExtResource("1_irueg")]
+[node name="staff" groups=["staff"] instance=ExtResource("1_irueg")]
 script = ExtResource("2_j3lwm")
 
 [node name="Staff" parent="." index="0"]
