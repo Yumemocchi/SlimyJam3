@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cninup1pyfhcl"]
+[gd_scene load_steps=19 format=3 uid="uid://cninup1pyfhcl"]
 
 [ext_resource type="PackedScene" uid="uid://soun6f1k3im1" path="res://simple_cube.tscn" id="1_1f1dq"]
 [ext_resource type="Texture2D" uid="uid://dtf64ejx028ir" path="res://Materials/parquet_stylize_basecolor.png" id="1_b3jsi"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bpryxd2auc8mh" path="res://Mana.tscn" id="4_0ptlq"]
 [ext_resource type="PackedScene" uid="uid://bmgl7nuu2g7yw" path="res://fire_bar.tscn" id="5_mo8gj"]
 [ext_resource type="PackedScene" uid="uid://dg1qc3kfowoyq" path="res://vie_bar.tscn" id="6_1vqbe"]
+[ext_resource type="PackedScene" uid="uid://13ct6dd5umjk" path="res://simple_cube_anim.tscn" id="7_k40wo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fsk8q"]
 albedo_texture = ExtResource("1_b3jsi")
@@ -82,8 +83,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.65513, 0, -0.313881)
 [node name="brasero_02" parent="Brasero" instance=ExtResource("3_h5j6o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.3128, 0, 6.99625)
 
-[node name="brasero_03" parent="Brasero" instance=ExtResource("3_h5j6o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9896, 0, -4.80926)
+[node name="simple_cube_anim2" parent="Brasero" instance=ExtResource("7_k40wo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8048, -3.8147e-06, 12.1267)
 
 [node name="Walls" type="Node3D" parent="."]
 
@@ -103,3 +104,6 @@ transform = Transform3D(0.707106, 0, -0.707106, 0, 1, 0, 0.707106, 0, 0.707106, 
 [node name="fire_bar" parent="." instance=ExtResource("5_mo8gj")]
 
 [node name="vie_bar" parent="." instance=ExtResource("6_1vqbe")]
+
+[node name="simple_cube_anim" parent="." instance=ExtResource("7_k40wo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.6784, 0, 3.22428)
