@@ -57,6 +57,7 @@ mesh = SubResource("BoxMesh_1ksuw")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="ground"]
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0)
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ground/StaticBody3D"]
 shape = SubResource("BoxShape3D_t8376")
@@ -84,12 +85,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.65513, 0, -0.313881)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.3128, 0, 6.99625)
 
 [node name="simple_cube_anim2" parent="Brasero" instance=ExtResource("7_k40wo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8048, -3.8147e-06, 12.1267)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8048, 4.22954, 12.1267)
 
 [node name="Walls" type="Node3D" parent="."]
 
 [node name="Wall" parent="Walls" instance=ExtResource("3_lfc2h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 12.4427, 26.3749, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 12.4427, 26.3749, 3.07021, 0)
 
 [node name="Wall2" parent="Walls" instance=ExtResource("3_lfc2h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 12.9432, -23.7789, 0, 3.66717)
@@ -97,7 +98,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 12.9432, -23.7789, 0, 3.66717)
 [node name="Objects" type="Node3D" parent="."]
 
 [node name="simple_cube" parent="Objects" instance=ExtResource("1_1f1dq")]
-transform = Transform3D(0.707106, 0, -0.707106, 0, 1, 0, 0.707106, 0, 0.707106, 3.74972, 0, -1.06204)
+transform = Transform3D(0.707106, 0, -0.707106, 0, 1, 0, 0.707106, 0, 0.707106, 3.74972, 8.12076, -1.06204)
 
 [node name="mana_bar" parent="." instance=ExtResource("4_0ptlq")]
 
@@ -106,4 +107,4 @@ transform = Transform3D(0.707106, 0, -0.707106, 0, 1, 0, 0.707106, 0, 0.707106, 
 [node name="vie_bar" parent="." instance=ExtResource("6_1vqbe")]
 
 [node name="simple_cube_anim" parent="." instance=ExtResource("7_k40wo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.6784, 0, 3.22428)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.6784, 12.2629, 3.22428)

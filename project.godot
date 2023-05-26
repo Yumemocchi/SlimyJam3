@@ -141,6 +141,15 @@ dash={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="floor"
+3d_physics/layer_2="ennemies"
+3d_physics/layer_3="walls"
+3d_physics/layer_4="player"
+3d_physics/layer_5="objects"
+3d_physics/layer_6="items"
+
 [rendering]
 
 anti_aliasing/quality/msaa_3d=3

@@ -189,7 +189,9 @@ shadow_mesh = SubResource("ArrayMesh_2xme3")
 radius = 0.702526
 height = 3.53059
 
-[node name="wizard_10" type="CharacterBody3D"]
+[node name="wizard_10" type="CharacterBody3D" groups=["player"]]
+collision_layer = 8
+collision_mask = 7
 script = ExtResource("1_4tsep")
 
 [node name="Armature" type="Node3D" parent="."]
@@ -202,7 +204,7 @@ skeleton = NodePath("")
 [node name="staff" parent="Armature/Wizard" instance=ExtResource("2_qx0dc")]
 transform = Transform3D(0.01, 0, 0, 0, -4.37114e-10, -0.01, 0, 0.01, -4.37114e-10, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.56897, 0)
 shape = SubResource("CapsuleShape3D_7lu4c")
 

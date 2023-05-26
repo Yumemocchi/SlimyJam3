@@ -15,6 +15,8 @@ extends Node
 @onready var vie := 100.0
 @onready var hurt_power := 20.0
 
+@onready var player_position := Vector3.ZERO
+
 func set_burst(b: bool):
 	burst = b
 	
