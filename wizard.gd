@@ -88,3 +88,4 @@ func release_attack():
 
 func hurt():
 	Globals.vie -= Globals.hurt_power
+
