@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dg1qc3kfowoyq"]
+
+[ext_resource type="Script" path="res://Scripts/vie_bar.gd" id="1_tgc3f"]
+[ext_resource type="Texture2D" uid="uid://bmlp7fjtcsxkq" path="res://Asset/Images/vie_under.png" id="2_vryxb"]
+[ext_resource type="Texture2D" uid="uid://bhds3ulhmalny" path="res://Asset/Images/vie_over.png" id="3_u3n6o"]
+[ext_resource type="Texture2D" uid="uid://dywwcdnwnfhbq" path="res://Asset/Images/vie_progress.png" id="4_obmng"]
+
+[node name="vie_bar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tgc3f")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 4.0
+offset_right = 361.0
+offset_bottom = 64.0
+value = 100.0
+texture_under = ExtResource("2_vryxb")
+texture_over = ExtResource("3_u3n6o")
+texture_progress = ExtResource("4_obmng")
+
+[node name="Timer" type="Timer" parent="."]

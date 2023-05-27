@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpryxd2auc8mh"]
+
+[ext_resource type="Script" path="res://Scripts/Mana.gd" id="1_fticp"]
+[ext_resource type="Texture2D" uid="uid://b7muki1f0yixj" path="res://Asset/Images/mana_under.png" id="2_4l73i"]
+[ext_resource type="Texture2D" uid="uid://buw7fjetic75k" path="res://Asset/Images/mana_over.png" id="3_hfyu1"]
+[ext_resource type="Texture2D" uid="uid://di2wjxx65ebkw" path="res://Asset/Images/mana_progress.png" id="4_m7ygc"]
+
+[node name="mana_bar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fticp")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_top = 53.0
+offset_right = 355.0
+offset_bottom = 113.0
+texture_under = ExtResource("2_4l73i")
+texture_over = ExtResource("3_hfyu1")
+texture_progress = ExtResource("4_m7ygc")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
