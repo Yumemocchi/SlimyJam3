@@ -9,7 +9,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	
 	var forward_direction = transform.basis.z.normalized()
 	global_translate(forward_direction * SPEED * delta)
 	#print(forward_direction)

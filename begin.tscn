@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://dv84tcv8in3xo"]
+
+[ext_resource type="Script" path="res://begin.gd" id="1_sfshq"]
+
+[node name="Begin" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sfshq")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 172.0
+offset_top = 129.0
+offset_right = 549.0
+offset_bottom = 438.0
+text = "Survivez au labyrinthe !
+Allumez tous les brasiers pour trouver la sortie !
+Attention aux cubes tueurs ^^
+
+
+Manette (mieux):
+X : attaque
+A : dash
+
+Clavier : 
+Espace : attaque
+Shift : dash"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 627.0
+offset_top = 265.0
+offset_right = 819.0
+offset_bottom = 305.0
+theme_override_colors/default_color = Color(0.776471, 0.8, 0, 1)
+text = "Enter pour commencer !"

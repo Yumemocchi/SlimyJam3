@@ -190,7 +190,7 @@ radius = 0.702526
 height = 3.53059
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b2h0h"]
-radius = 1.068
+radius = 0.8
 height = 3.026
 
 [node name="wizard_10" type="CharacterBody3D" groups=["player"]]
@@ -226,7 +226,9 @@ far = 50.0
 transform = Transform3D(1, 0, 0, 0, 0.649899, 0.76002, 0, -0.76002, 0.649899, 0, 12.1247, 13.3199)
 fov = 92.9
 
-[node name="HurtBoxPlayer" type="Area3D" parent="."]
+[node name="HurtBoxPlayer" type="Area3D" parent="." groups=["player"]]
+collision_layer = 8
+collision_mask = 64
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HurtBoxPlayer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.44728, 0)

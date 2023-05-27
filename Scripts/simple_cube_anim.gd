@@ -2,11 +2,12 @@ extends CharacterBody3D
 
 @onready var SPEED := 2.0
 @onready var isAwake = false
-@onready var life = 10
+@onready var life = 3
 @onready var is_hurting = false
 @onready var is_player_near = false
 @onready var can_shoot = false
 @onready var max_bullets = 5
+@onready var _timer = $Timer
 
 @export var OBJ_BULLET: PackedScene
 
@@ -72,16 +73,16 @@ func _on_area_detection_body_exited(body):
 func _on_area_follow_body_exited(body):
 	if body.is_in_group("player"):
 		#await get_tree().create_timer(3.0).timeout
-		$Timer.start()
-		await $Timer.timeout
+		_timer.start()
+		await _timer.timeout
 		isAwake = false
 
 
 
 func _on_area_follow_body_entered(body):
 	if isMoving() and body.is_in_group("player"):
-		if !$Timer.is_stopped():
-			$Timer.stop()
+		if !_timer.is_stopped():
+			_timer.stop()
 
 
 func _on_hurt_box_area_entered(area):

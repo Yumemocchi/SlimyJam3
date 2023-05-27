@@ -1,5 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://cninup1pyfhcl"]
+[gd_scene load_steps=20 format=3 uid="uid://cninup1pyfhcl"]
 
+[ext_resource type="Script" path="res://level_1.gd" id="1_8eh7f"]
 [ext_resource type="Texture2D" uid="uid://dtf64ejx028ir" path="res://Asset/Materials/parquet_stylize_basecolor.png" id="1_784fb"]
 [ext_resource type="Texture2D" uid="uid://bwt0f0y4srrsg" path="res://Asset/Materials/parquet_stylize_metallic.png" id="2_njt1x"]
 [ext_resource type="Texture2D" uid="uid://o28nyeuypnjy" path="res://Asset/Materials/parquet_stylize_normal.png" id="3_x5x5d"]
@@ -11,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bpryxd2auc8mh" path="res://UI/Mana.tscn" id="9_0d875"]
 [ext_resource type="PackedScene" uid="uid://bmgl7nuu2g7yw" path="res://UI/fire_bar.tscn" id="10_cl5iq"]
 [ext_resource type="PackedScene" uid="uid://dg1qc3kfowoyq" path="res://UI/vie_bar.tscn" id="11_8hups"]
+[ext_resource type="PackedScene" uid="uid://d2he82ywlkssg" path="res://Items/life_potion.tscn" id="12_6r5r2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fsk8q"]
 albedo_texture = ExtResource("1_784fb")
@@ -48,6 +50,7 @@ ssao_enabled = true
 glow_enabled = true
 
 [node name="Level_1" type="Node3D"]
+script = ExtResource("1_8eh7f")
 
 [node name="ground" type="MeshInstance3D" parent="."]
 transform = Transform3D(30, 0, 0, 0, 1, 0, 0, 0, 30, 0, -0.5, 0)
@@ -1453,6 +1456,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00012207, 60)
 
 [node name="vie_bar" parent="." instance=ExtResource("11_8hups")]
 
+[node name="TimerLabel" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="TimerLabel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 112.0
+offset_right = 60.0
+offset_bottom = 135.0
+
 [node name="Ennemis" type="Node3D" parent="."]
 
 [node name="simple_cube_anim2" parent="Ennemis" instance=ExtResource("7_25r1a")]
@@ -1481,3 +1497,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, -0.00012207, -10)
 
 [node name="simple_cube_anim10" parent="Ennemis" instance=ExtResource("7_25r1a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, -0.00012207, -18)
+
+[node name="life_potion2" parent="Ennemis" instance=ExtResource("12_6r5r2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, 0, 32)
+
+[node name="life_potion3" parent="Ennemis" instance=ExtResource("12_6r5r2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
+
+[node name="wall" parent="Ennemis" instance=ExtResource("8_q2nqy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -64)
+
+[node name="wall2" parent="Ennemis" instance=ExtResource("8_q2nqy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -64)
+
+[node name="Items" type="Node3D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 350.0
+one_shot = true
+autostart = true

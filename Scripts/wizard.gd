@@ -89,12 +89,8 @@ func release_attack():
 	Globals.set_burst(false)
 	Globals.resting = true
 
-func hurt():
-	print("hurt")
-	Globals.vie -= Globals.hurt_power
-
-
 
 func _on_hurt_box_player_area_entered(area):
 	if area.is_in_group("bullet"):
-		Globals.vie -= 1
+		print("hurt")
+		Globals.vie -= Globals.hurt_power

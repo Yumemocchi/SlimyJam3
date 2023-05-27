@@ -45,10 +45,10 @@ shadow_mesh = SubResource("ArrayMesh_jo2yh")
 [sub_resource type="BoxShape3D" id="BoxShape3D_fx8h7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_piv4y"]
-size = Vector3(12, 1, 12)
+size = Vector3(16, 1, 16)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xmj5c"]
-size = Vector3(25, 1, 25)
+size = Vector3(30, 1, 30)
 
 [sub_resource type="Animation" id="Animation_gy1bt"]
 resource_name = "CubeAction"

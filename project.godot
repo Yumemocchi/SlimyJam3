@@ -75,7 +75,7 @@ Settings/Show_Tooltips=true
 [application]
 
 config/name="Slimy Jam 3"
-run/main_scene="res://level_1.tscn"
+run/main_scene="res://begin.tscn"
 config/features=PackedStringArray("4.0", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -149,6 +149,7 @@ dash={
 3d_physics/layer_4="player"
 3d_physics/layer_5="objects"
 3d_physics/layer_6="items"
+3d_physics/layer_7="bullets"
 
 [rendering]
 

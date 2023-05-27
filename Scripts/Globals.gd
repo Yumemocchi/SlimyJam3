@@ -13,7 +13,7 @@ extends Node
 @onready var nb_brasero_up := 0
 
 @onready var vie := 100.0
-@onready var hurt_power := 20.0
+@onready var hurt_power := 10.0
 
 @onready var player_position := Vector3.ZERO
 
