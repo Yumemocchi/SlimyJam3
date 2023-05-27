@@ -1460,3 +1460,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 46)
 
 [node name="simple_cube_anim3" parent="Ennemis" instance=ExtResource("7_25r1a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 36)
+
+[node name="simple_cube_anim4" parent="Ennemis" instance=ExtResource("7_25r1a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, -0.00012207, -50)
+
+[node name="simple_cube_anim5" parent="Ennemis" instance=ExtResource("7_25r1a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -0.00012207, -58)
+
+[node name="simple_cube_anim6" parent="Ennemis" instance=ExtResource("7_25r1a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, -0.00012207, -8)
+
+[node name="simple_cube_anim7" parent="Ennemis" instance=ExtResource("7_25r1a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56, -0.00012207, 36)
+
+[node name="simple_cube_anim8" parent="Ennemis" instance=ExtResource("7_25r1a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, -0.00012207, -46)
+
+[node name="simple_cube_anim9" parent="Ennemis" instance=ExtResource("7_25r1a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, -0.00012207, -10)
+
+[node name="simple_cube_anim10" parent="Ennemis" instance=ExtResource("7_25r1a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, -0.00012207, -18)

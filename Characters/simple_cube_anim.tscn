@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://13ct6dd5umjk"]
+[gd_scene load_steps=13 format=3 uid="uid://13ct6dd5umjk"]
 
 [ext_resource type="Script" path="res://Scripts/simple_cube_anim.gd" id="1_dgrsh"]
+[ext_resource type="PackedScene" uid="uid://nk6b04mc0jnb" path="res://Objects/bullet.tscn" id="2_e7kvn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a8t1h"]
 resource_name = "mat_simple_cube"
@@ -91,6 +92,7 @@ size = Vector3(2, 2, 2)
 collision_layer = 2
 collision_mask = 7
 script = ExtResource("1_dgrsh")
+OBJ_BULLET = ExtResource("2_e7kvn")
 
 [node name="Cube" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00221491, 0, -0.109781)
@@ -131,8 +133,14 @@ wait_time = 3.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_7d041")
 
+[node name="TimerBullet" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
 [connection signal="body_entered" from="AreaDetection" to="." method="_on_area_detection_body_entered"]
+[connection signal="body_exited" from="AreaDetection" to="." method="_on_area_detection_body_exited"]
 [connection signal="body_entered" from="AreaFollow" to="." method="_on_area_follow_body_entered"]
 [connection signal="body_exited" from="AreaFollow" to="." method="_on_area_follow_body_exited"]
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="area_exited" from="HurtBox" to="." method="_on_hurt_box_area_exited"]
+[connection signal="timeout" from="TimerBullet" to="." method="_on_timer_bullet_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://wcxp2b65m1yx"]
+[gd_scene load_steps=13 format=3 uid="uid://wcxp2b65m1yx"]
 
 [ext_resource type="Script" path="res://Scripts/wizard.gd" id="1_iajg0"]
 [ext_resource type="PackedScene" uid="uid://bpi7pwapfcqr6" path="res://Weapons/staff.tscn" id="2_qx0dc"]
@@ -189,6 +189,10 @@ shadow_mesh = SubResource("ArrayMesh_2xme3")
 radius = 0.702526
 height = 3.53059
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b2h0h"]
+radius = 1.068
+height = 3.026
+
 [node name="wizard_10" type="CharacterBody3D" groups=["player"]]
 collision_layer = 8
 collision_mask = 7
@@ -220,5 +224,12 @@ far = 50.0
 
 [node name="Camera3D2" type="Camera3D" parent="pivot"]
 transform = Transform3D(1, 0, 0, 0, 0.649899, 0.76002, 0, -0.76002, 0.649899, 0, 12.1247, 13.3199)
-visible = false
 fov = 92.9
+
+[node name="HurtBoxPlayer" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtBoxPlayer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.44728, 0)
+shape = SubResource("CapsuleShape3D_b2h0h")
+
+[connection signal="area_entered" from="HurtBoxPlayer" to="." method="_on_hurt_box_player_area_entered"]

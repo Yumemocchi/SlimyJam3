@@ -18,6 +18,9 @@ func  _ready() -> void:
 func _physics_process(delta):
 	# Add the gravity.
 	Globals.player_position = position
+
+	if Globals.vie <=0:
+		print("dead")
 	
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -87,5 +90,11 @@ func release_attack():
 	Globals.resting = true
 
 func hurt():
+	print("hurt")
 	Globals.vie -= Globals.hurt_power
 
+
+
+func _on_hurt_box_player_area_entered(area):
+	if area.is_in_group("bullet"):
+		Globals.vie -= 1
