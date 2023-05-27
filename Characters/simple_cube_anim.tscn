@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://13ct6dd5umjk"]
+[gd_scene load_steps=12 format=3 uid="uid://13ct6dd5umjk"]
 
 [ext_resource type="Script" path="res://Scripts/simple_cube_anim.gd" id="1_dgrsh"]
 
@@ -66,10 +66,26 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.0333333, 1, 0, 0, 0, 1, 0.0666667, 1, 0, 0.0645968, 0, 0.997911, 0.1, 1, 0, 0.22138, 0, 0.975188, 0.133333, 1, 0, 0.461844, 0, 0.886961, 0.166667, 1, 0, 0.727374, 0, 0.686242, 0.2, 1, 0, 0.935953, 0, 0.352124, 0.233333, 1, 0, 0.998641, 0, -0.0521208, 0.266667, 1, 0, -0.896515, 0, 0.443013, 0.3, 1, 0, -0.667528, 0, 0.744585, 0.333333, 1, 0, -0.386164, 0, 0.92243, 0.366667, 1, 0, -0.164729, 0, 0.986339, 0.4, 1, 0, -0.0430811, 0, 0.999072, 0.433333, 1, 0, 8.74228e-08, 0, 1, 0.833333, 1, 0, 8.74228e-08, 0, 1, 1, 1, 0, 8.74228e-08, 0, 1)
 
+[sub_resource type="Animation" id="Animation_xsxhu"]
+resource_name = "hurt_animation"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cube")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.00221491, 0, -0.00221491, 0.1, 1, 0.00221491, 0, -0.452163)
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k63ka"]
 _data = {
-"CubeAction": SubResource("Animation_gy1bt")
+"CubeAction": SubResource("Animation_gy1bt"),
+"hurt_animation": SubResource("Animation_xsxhu")
 }
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7d041"]
+size = Vector3(2, 2, 2)
 
 [node name="simple_cube_anim" type="CharacterBody3D" groups=["ennemies"]]
 collision_layer = 2
@@ -77,7 +93,7 @@ collision_mask = 7
 script = ExtResource("1_dgrsh")
 
 [node name="Cube" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00221491, 0, -0.00221491)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00221491, 0, -0.109781)
 mesh = SubResource("ArrayMesh_jj7dn")
 skeleton = NodePath("")
 
@@ -109,6 +125,14 @@ libraries = {
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 
+[node name="HurtBox" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_7d041")
+
 [connection signal="body_entered" from="AreaDetection" to="." method="_on_area_detection_body_entered"]
 [connection signal="body_entered" from="AreaFollow" to="." method="_on_area_follow_body_entered"]
 [connection signal="body_exited" from="AreaFollow" to="." method="_on_area_follow_body_exited"]
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="area_exited" from="HurtBox" to="." method="_on_hurt_box_area_exited"]

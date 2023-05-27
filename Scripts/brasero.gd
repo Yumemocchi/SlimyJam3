@@ -7,8 +7,8 @@ extends StaticBody3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_timer.stop() # Replace with function body.
-	_timer.wait_time = Globals.uptime_brasero
+	#_timer.stop() # Replace with function body.
+	#_timer.wait_time = Globals.uptime_brasero
 	Globals.total_braseros = get_tree().get_nodes_in_group("brasero").size()
 
 
@@ -27,7 +27,7 @@ func _on_area_3d_area_entered(area):
 		add_child(fire)
 		_is_fire_started = true
 		Globals.nb_brasero_up += 1
-		_timer.start()
+		#_timer.start()
 
 
 

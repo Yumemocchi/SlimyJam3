@@ -13,4 +13,4 @@ func _process(delta):
 
 func _on_timer_timeout():
 	if Globals.resting and Globals.mana < 100:
-		Globals.mana += Globals.power_mana
+		Globals.mana += Globals.power_mana+2

@@ -4,7 +4,7 @@ extends Node
 @onready var burst := false
 
 @onready var mana := 100.0
-@onready var power_mana := 20
+@onready var power_mana := 5
 
 @onready var resting := true
 

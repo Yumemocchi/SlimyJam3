@@ -2,6 +2,9 @@ extends CharacterBody3D
 
 @onready var SPEED := 2.0
 @onready var isAwake = false
+@onready var life = 5
+@onready var is_hurting = false
+
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 
@@ -9,6 +12,7 @@ func _physics_process(delta):
 	#velocity = position.direction_to(Globals.player_position) * SPEED
 	if not is_on_floor():
 		velocity.y -= gravity * delta
+	
 			
 	if isAwake:		
 		look_at_from_position(position,Globals.player_position,Vector3.UP)
@@ -50,3 +54,14 @@ func _on_area_follow_body_entered(body):
 		if !$Timer.is_stopped():
 			print("stop")
 			$Timer.stop()
+
+
+func _on_hurt_box_area_entered(area):
+	if area.is_in_group("player_attack"):
+		is_hurting = true
+		$AnimationPlayerCube.play("hurt_animation")
+
+
+func _on_hurt_box_area_exited(area):
+	if area.is_in_group("player_attack"):
+		is_hurting = false

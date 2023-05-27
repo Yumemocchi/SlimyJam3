@@ -1,14 +1,14 @@
 [gd_scene load_steps=15 format=3 uid="uid://dv0xkorsxfqqa"]
 
-[ext_resource type="Script" path="res://Scripts/fire_flame.gd" id="1_fwi5k"]
-[ext_resource type="Texture2D" uid="uid://0xvkisx07g8t" path="res://Asset/Kenney_Particles_transparent/flame_01.png" id="1_vywtd"]
-[ext_resource type="Texture2D" uid="uid://yuenhpdyj6ei" path="res://Asset/Kenney_Particles_transparent/smoke_07.png" id="2_yhrom"]
+[ext_resource type="Script" path="res://Scripts/fire_flame.gd" id="1_7tu83"]
+[ext_resource type="Texture2D" uid="uid://0xvkisx07g8t" path="res://Asset/Kenney_Particles_transparent/flame_01.png" id="2_06d8s"]
+[ext_resource type="Texture2D" uid="uid://yuenhpdyj6ei" path="res://Asset/Kenney_Particles_transparent/smoke_07.png" id="3_o3vhh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rexqb"]
 blend_mode = 1
 shading_mode = 0
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("1_vywtd")
+albedo_texture = ExtResource("2_06d8s")
 billboard_mode = 3
 billboard_keep_scale = true
 particles_anim_h_frames = 1
@@ -46,7 +46,7 @@ turbulence_influence_max = 0.22
 transparency = 1
 blend_mode = 1
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("2_yhrom")
+albedo_texture = ExtResource("3_o3vhh")
 billboard_mode = 3
 billboard_keep_scale = true
 particles_anim_h_frames = 1
@@ -64,7 +64,7 @@ color = Color(0.976471, 0.537255, 0.270588, 1)
 height = 6.8574
 
 [node name="fire_flame" type="Node3D"]
-script = ExtResource("1_fwi5k")
+script = ExtResource("1_7tu83")
 
 [node name="GPUFireParticles" type="GPUParticles3D" parent="."]
 material_override = SubResource("StandardMaterial3D_rexqb")
@@ -97,7 +97,7 @@ shadow_blur = 0.0
 omni_range = 9.081
 omni_attenuation = 0.87055
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." groups=["player_attack"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.75034, 0)
