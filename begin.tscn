@@ -34,7 +34,9 @@ Shift : dash"
 layout_mode = 0
 offset_left = 627.0
 offset_top = 265.0
-offset_right = 819.0
-offset_bottom = 305.0
+offset_right = 844.0
+offset_bottom = 370.0
 theme_override_colors/default_color = Color(0.776471, 0.8, 0, 1)
-text = "Enter pour commencer !"
+text = "Enter pour commencer !
+
+(patientez un peu pour le chargement)"
