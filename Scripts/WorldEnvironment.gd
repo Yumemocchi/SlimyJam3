@@ -8,8 +8,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	#if Globals.total_braseros == Globals.nb_brasero_up:
-	if 2 == Globals.nb_brasero_up:
+	if Globals.total_braseros == Globals.nb_brasero_up:
+	#if 2 == Globals.nb_brasero_up:
 		environment.sky.sky_material.sky_energy_multiplier = 0.1
 		$"../DirectionalLight3D".visible = true
 	else:
