@@ -10,15 +10,15 @@ grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 966.0
-offset_bottom = 554.0
+offset_right = 2066.0
+offset_bottom = 1187.0
 color = Color(0, 0, 0, 1)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="ColorRect"]
 layout_mode = 0
-offset_left = 364.0
-offset_top = 201.0
-offset_right = 699.0
-offset_bottom = 316.0
-text = "Vous avez trouvé la sortie !!!
+offset_left = 824.0
+offset_top = 493.0
+offset_right = 1159.0
+offset_bottom = 608.0
+text = "Vous avez vaincu le boss et trouvé la sortie !!!
 Bien joué :)"

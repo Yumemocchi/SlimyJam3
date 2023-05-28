@@ -9,7 +9,7 @@ extends Node
 @onready var resting := true
 
 @onready var uptime_brasero := 20
-@onready var total_braseros := 3
+@onready var total_braseros := 0
 @onready var nb_brasero_up := 0
 
 @onready var vie := 100.0

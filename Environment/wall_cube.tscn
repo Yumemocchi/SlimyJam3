@@ -1,10 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bnb6mqmx1a4q3"]
-
-[ext_resource type="Texture2D" uid="uid://d3flfqrfrmp3j" path="res://Asset/Images/texture_03.png" id="1_japmw"]
-[ext_resource type="Texture2D" uid="uid://pnddgsej6qpw" path="res://Asset/Images/texture_01.png" id="2_h1kl3"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6i5b2"]
-albedo_texture = ExtResource("1_japmw")
+[gd_scene load_steps=6 format=3 uid="uid://bnb6mqmx1a4q3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_787ba"]
 resource_name = "Material"
@@ -43,20 +37,19 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_jmmwf")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pniyd"]
-albedo_texture = ExtResource("2_h1kl3")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uvv82"]
+albedo_color = Color(0.32549, 0.666667, 0, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_te3x0"]
 size = Vector3(7.8, 7.8, 7.8)
 
-[node name="wall_cube" type="StaticBody3D"]
+[node name="wall_cube" type="StaticBody3D" groups=["destructible_walls"]]
 
 [node name="Cube" type="MeshInstance3D" parent="."]
 transform = Transform3D(3.9, 0, 0, 0, 3.9, 0, 0, 0, 3.9, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_6i5b2")
 mesh = SubResource("ArrayMesh_h6642")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_pniyd")
+surface_material_override/0 = SubResource("StandardMaterial3D_uvv82")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.89102, 0)

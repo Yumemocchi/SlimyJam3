@@ -1,8 +1,8 @@
 extends CharacterBody3D
 
-@onready var SPEED := 2.0
+@onready var SPEED := 10.0
 @onready var isAwake = false
-@onready var life = 3
+@onready var life = 10
 @onready var is_hurting = false
 @onready var is_player_near = false
 @onready var can_shoot = false
@@ -23,7 +23,8 @@ func _physics_process(delta):
 		life -= 1 * delta
 	
 	if life <= 0:
-		queue_free()
+		get_tree().change_scene_to_file("res://good_end.tscn")
+		#queue_free()
 		
 
 	if isAwake:

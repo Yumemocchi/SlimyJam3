@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cninup1pyfhcl"]
+[gd_scene load_steps=22 format=3 uid="uid://cninup1pyfhcl"]
 
 [ext_resource type="Script" path="res://level_1.gd" id="1_8eh7f"]
 [ext_resource type="Texture2D" uid="uid://dtf64ejx028ir" path="res://Asset/Materials/parquet_stylize_basecolor.png" id="1_784fb"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://bmgl7nuu2g7yw" path="res://UI/fire_bar.tscn" id="10_cl5iq"]
 [ext_resource type="PackedScene" uid="uid://dg1qc3kfowoyq" path="res://UI/vie_bar.tscn" id="11_8hups"]
 [ext_resource type="PackedScene" uid="uid://d2he82ywlkssg" path="res://Items/life_potion.tscn" id="12_6r5r2"]
+[ext_resource type="PackedScene" uid="uid://c4sq585ed86b7" path="res://Characters/Boss_cube.tscn" id="15_b8rdj"]
+[ext_resource type="PackedScene" uid="uid://bnb6mqmx1a4q3" path="res://Environment/wall_cube.tscn" id="15_rjc3e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fsk8q"]
 albedo_texture = ExtResource("1_784fb")
@@ -1469,6 +1471,11 @@ offset_top = 112.0
 offset_right = 60.0
 offset_bottom = 135.0
 
+[node name="Wall_to_remove" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -62)
+
+[node name="wall_cube2" parent="Wall_to_remove" instance=ExtResource("15_rjc3e")]
+
 [node name="Ennemis" type="Node3D" parent="."]
 
 [node name="simple_cube_anim2" parent="Ennemis" instance=ExtResource("7_25r1a")]
@@ -1499,16 +1506,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, -0.00012207, -10)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, -0.00012207, -18)
 
 [node name="life_potion2" parent="Ennemis" instance=ExtResource("12_6r5r2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, 0, 32)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.9208, 0, 30.7325)
 
 [node name="life_potion3" parent="Ennemis" instance=ExtResource("12_6r5r2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
 
-[node name="wall" parent="Ennemis" instance=ExtResource("8_q2nqy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -64)
+[node name="life_potion4" parent="Ennemis" instance=ExtResource("12_6r5r2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 4)
 
-[node name="wall2" parent="Ennemis" instance=ExtResource("8_q2nqy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -64)
+[node name="life_potion5" parent="Ennemis" instance=ExtResource("12_6r5r2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -122)
+
+[node name="life_potion6" parent="Ennemis" instance=ExtResource("12_6r5r2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -122)
+
+[node name="Boss_cube" parent="Ennemis" instance=ExtResource("15_b8rdj")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 2, 0, -98)
 
 [node name="Items" type="Node3D" parent="."]
 

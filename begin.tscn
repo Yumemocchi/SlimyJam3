@@ -13,12 +13,12 @@ script = ExtResource("1_sfshq")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 172.0
-offset_top = 129.0
-offset_right = 549.0
-offset_bottom = 438.0
+offset_left = 751.0
+offset_top = 121.0
+offset_right = 1128.0
+offset_bottom = 430.0
 text = "Survivez au labyrinthe !
-Allumez tous les brasiers pour trouver la sortie !
+Allumez tous les brasiers pour allumer la lumière et ouvrir la porte du boss !
 Attention aux cubes tueurs ^^
 
 
@@ -32,10 +32,10 @@ Shift : dash"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 627.0
-offset_top = 265.0
-offset_right = 844.0
-offset_bottom = 370.0
+offset_left = 800.0
+offset_top = 537.0
+offset_right = 1017.0
+offset_bottom = 642.0
 theme_override_colors/default_color = Color(0.776471, 0.8, 0, 1)
 text = "Enter pour commencer !
 

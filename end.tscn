@@ -10,22 +10,22 @@ grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 966.0
-offset_bottom = 548.0
+offset_right = 2044.0
+offset_bottom = 1129.0
 color = Color(0, 0, 0, 1)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 418.0
-offset_top = 237.0
-offset_right = 514.0
-offset_bottom = 268.0
+offset_left = 902.0
+offset_top = 493.0
+offset_right = 998.0
+offset_bottom = 524.0
 text = "Game Over"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 389.0
-offset_top = 269.0
-offset_right = 551.0
-offset_bottom = 301.0
+offset_left = 873.0
+offset_top = 525.0
+offset_right = 1035.0
+offset_bottom = 557.0
 text = "Merci d'avoir joué !"
