@@ -17,17 +17,16 @@ offset_left = 751.0
 offset_top = 121.0
 offset_right = 1128.0
 offset_bottom = 430.0
-text = "Survivez au labyrinthe avant la fin du timer !
-Allumez tous les brasiers pour allumer la lumière et ouvrir la porte du boss !
-Attention aux cubes tueurs ^^
+text = "Survive the maze before the timer runs out!
+Light all the braziers to turn on the light and open the boss door!
+Beware of the killer cubes ^^
 
-
-Manette (mieux):
-X : attaque
+Pad (better):
+X : attack
 A : dash
 
-Clavier : 
-Espace : attaque
+Keyboard : 
+Espace : attack
 Shift : dash"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
@@ -37,6 +36,6 @@ offset_top = 537.0
 offset_right = 1017.0
 offset_bottom = 642.0
 theme_override_colors/default_color = Color(0.776471, 0.8, 0, 1)
-text = "Enter pour commencer !
+text = "Enter to begin !
 
-(patientez un peu pour le chargement)"
+(wait a few seconds)"
